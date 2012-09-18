@@ -19,7 +19,6 @@ Zend_Loader::loadClass('Zend_Auth_Adapter_DbTable');
 Zend_Loader::loadClass('Zend_Paginator');
 Zend_Loader::loadClass('Application_Form_Login');
 
-// load configuration
 $config = new Zend_Config_Ini('./application/config.ini', 'general');
 $registry = Zend_Registry::getInstance();
 $registry->set('config', $config); 
