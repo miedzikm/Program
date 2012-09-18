@@ -1,0 +1,58 @@
+﻿<?php echo $this->render('header.phtml'); ?>
+<div id="content">
+	<?php echo $this->render('lewa.phtml'); ?>
+	<div id="colRight">
+		<div id="text">
+			<h1>Newsletter</h1>
+			Zapisując się do naszego newslettera, otrzymasz e-maile o
+			nowych ekskluzywnych włącznikach firmy Fontini.
+			<script
+				src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+				type="text/javascript" charset="utf-8"></script>
+			<script
+				src="http://mgroup.pl/library/uniform/jquery.uniform.js"
+				type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input, textarea, select, button").uniform();
+      });
+    </script>
+			<link rel="stylesheet"
+				href="http://mgroup.pl/library/uniform/css/uniform.default.css"
+				type="text/css" media="screen">
+
+			<form action="<?php echo $this->baseUrl;?>/newsletter" method="post" name="newsletter">
+				<table>
+					<tr>
+						<td><label>Podpis:</label></td>
+						<td><input type="text" size="40" name="podpis" /></td>
+					</tr>
+					<tr>
+						<td><label>E-mail:</label></td>
+						<td><input type="email" size="40" name="mail" /></td>
+					</tr>
+					<tr>
+						<td><label>Jak nas znalazłeś?:</label></td>
+						<td><select name="skad">
+								<option>Wyszukiwarka Google</option>
+								<option>Przekierowanie z innej strony</option>
+								<option>Inne</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><label><input type="radio" name="radio" checked="checked" value="1" />Chcę się zapisać</label> <label><input type="radio" name="radio" value="0" />Chcę się wypisać</label></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="Wyślij" /> <input type="reset" value="Wyczyść" /></td>
+					</tr>
+				</table>
+			</form>
+
+
+
+		</div>
+	</div>
+</div>
+<?php echo $this->render('footer.phtml'); ?>

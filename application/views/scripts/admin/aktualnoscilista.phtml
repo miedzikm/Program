@@ -1,0 +1,88 @@
+﻿<?php echo $this->render('admin/mcms.phtml'); ?>
+		<div id="content">
+			<div class="content_buttons">
+				<ul>
+					<a href="<?php echo $this->baseUrl;?>/admin/aktualnosci"><li><input class="content_buttons_new" value="Nowa pozycja" /></li></a>
+					<a href="<?php echo $this->baseUrl;?>/admin/aktualnoscilista"><li><input class="content_buttons_list" value="Lista pozycji" /></li></a>
+				<ul>
+			</div>
+			<div class="content_title">
+				aktualnosci
+			</div>
+			<div class="content_info">
+				aktualnosci / lista pozycji
+			</div>
+			<div class="content_text">
+				<div class="content_options">
+					<div class="publikacje_select">
+						<img class="publikacje_radio" src="<?php echo $this->baseUrl;?>/mcms/images/radio.png" alt="" name="" title="" />
+					</div>
+					<div class="publikacje_id">
+						<b>ID</b>
+					</div>
+					<div class="publikacje_title">
+						<b>Nazwa</b>
+					</div>
+					<div class="publikacje_publish2">
+						<b>Widoczny</b>
+					</div>	
+					<div class="publikacje_options">
+					
+					</div>
+				</div>
+				<?php 
+				
+				$zm=0;
+				foreach($this->aktualnosci as $aktualnosci) :
+				$zm++;
+				$zm2 = $this->escape($aktualnosci->id)%2;
+				if($zm2 == 0) $zm2 = 2;
+				if($zm2 == 1) $zm2 = '';
+				echo '
+				<div class="content_line'.$zm2.'">
+					<div class="publikacje_select">
+						<input type="radio" />
+					</div>
+					<div class="publikacje_id">
+						'.$this->escape($aktualnosci->id).'
+					</div>
+					<div class="publikacje_title">
+						'.$this->escape($aktualnosci->tytul).'
+					</div>
+					<div class="publikacje_publish">';
+						
+						
+						if($this->escape($aktualnosci->widoczne)== 1) echo '<span class="publikacje_tak">Tak'; else echo '<span class="publikacje_nie">Nie';
+						
+						echo '</span>
+					</div>	
+					<div class="publikacje_options">
+					<input class="publikacje_informacje" title="" />
+					<a href="'.$this->baseUrl.'/admin/aktualnosciedit/id/'.$this->escape($aktualnosci->id).'"><input type="button" class="publikacje_edytuj" title="Edytuj" /></a>
+					<a href="'.$this->baseUrl.'/admin/aktualnoscidel/id/'.$this->escape($aktualnosci->id).'"><input type="button" class="publikacje_usun" title="Usuń" /></a>
+					</div>
+				</div>
+					';endforeach; 
+					 ?>
+				<div class="content_line3">
+					<div class="publikacje_select">
+						<img class="publikacje_radio" src="<?php echo $this->baseUrl;?>/mcms/images/radio.png" alt="" name="" title="" />
+					</div>
+					<div class="publikacje_zaznaczone">
+						<b>zaznaczone</b>
+					</div>
+					<div>
+						<input class="publikacje_usun" />
+					</div>
+					<div class="publikacje_paginacja">
+						<input class="publikacje_paginacja_poprzednia" />
+						<div class="publikacje_paginacja_strona">Strona nr 1</div>
+						<input class="publikacje_paginacja_nastepna" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

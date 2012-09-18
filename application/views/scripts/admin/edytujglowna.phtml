@@ -1,0 +1,76 @@
+﻿<?php echo $this->render('admin/mcms.phtml'); ?>
+		<div id="content">
+			<div class="content_buttons">
+
+			</div>
+			<div class="content_title">
+				Strona główna
+			</div>
+			<div class="content_info">
+				strona główna / edycja
+			</div>
+			<div class="content_text">
+				<div class="content_options">
+					<div class="publikacje_select">
+						
+					</div>
+					<div class="publikacje_id">
+						
+					</div>
+					<div class="publikacje_title">
+						
+					</div>
+					<div class="publikacje_publish2">
+						
+					</div>
+					<div class="publikacje_date">
+						
+					</div>	
+					<div class="publikacje_options">
+					
+					</div>
+				</div>
+				
+    <form action="<?php echo $this->baseUrl;?>/admin/edytujglowna" method="post">
+		<span style="color:#ffffff;">GŁÓWNA</span><br/>
+        <textarea id="editor2" class="ckeditor"  name="tresc"><?php $tekst = str_replace('\\', '', $this->onas[0]->tresc); echo $tekst; ?></textarea>
+   </form>
+      <script type="text/javascript">
+
+// This is a check for the CKEditor class. If not defined, the paths must be checked.
+if ( typeof CKEDITOR == 'undefined' )
+{
+	document.write(
+		'<strong><span style="color: #ff0000">Error</span>: CKEditor not found</strong>.' +
+		'This sample assumes that CKEditor (not included with CKFinder) is installed in' +
+		'the "/ckeditor/" path. If you have it installed in a different place, just edit' +
+		'this file, changing the wrong paths in the &lt;head&gt; (line 5) and the "BasePath"' +
+		'value (line 32).' ) ;
+}
+else
+{
+	var editor = CKEDITOR.replace( 'editor2' );
+
+	// Just call CKFinder.SetupCKEditor and pass the CKEditor instance as the first argument.
+	// The second parameter (optional), is the path for the CKFinder installation (default = "/ckfinder/").
+	CKFinder.setupCKEditor( editor, '../ckfinder/' ) ;
+
+	// It is also possible to pass an object with selected CKFinder properties as a second argument.
+	// CKFinder.SetupCKEditor( editor, { BasePath : '../../', RememberLastFolder : false } ) ;
+}
+
+		</script>
+				<div class="content_line3">
+					<div class="publikacje_select">
+						
+					</div>
+					<div class="publikacje_zaznaczone">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

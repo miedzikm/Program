@@ -1,0 +1,70 @@
+<?php echo $this->render('header.phtml'); ?>
+		<div id="logo">
+			<div id="menu">
+				<ul>
+					<li style="margin: 0px 1px 0px 0px;"><img src="<?php echo $this->baseUrl;?>/images/design/menu_left.png" /></li>
+					<li class="menu_home"><a href="<?php echo $this->baseUrl;?>"><img src="<?php echo $this->baseUrl;?>/images/design/home.png" /></a></li>
+					<li class="menu_about"><a href="<?php echo $this->baseUrl;?>/onas"><img src="<?php echo $this->baseUrl;?>/images/design/about.png" /></a></li>
+					<li class="menu_base2"><a href="<?php echo $this->baseUrl;?>/baza"><img src="<?php echo $this->baseUrl;?>/images/design/base.png" /></a></li>
+					<li class="menu_news"><a href="<?php echo $this->baseUrl;?>/news"><img src="<?php echo $this->baseUrl;?>/images/design/news.png" /></a></li>
+					<li class="menu_art"><a href="<?php echo $this->baseUrl;?>/art"><img src="<?php echo $this->baseUrl;?>/images/design/art.png" /></a></li>
+					<li class="menu_training"><a href="<?php echo $this->baseUrl;?>/szkolenia"><img src="<?php echo $this->baseUrl;?>/images/design/training.png" /></a></li>
+					<li class="menu_promo"><a href="<?php echo $this->baseUrl;?>/promocje"><img src="<?php echo $this->baseUrl;?>/images/design/promo.png" /></a></li>
+					<li class="menu_club"><a href="<?php echo $this->baseUrl;?>/klub"><img src="<?php echo $this->baseUrl;?>/images/design/club.png" /></a></li>
+					<li class="menu_contact"><a href="<?php echo $this->baseUrl;?>/kontakt"><img src="<?php echo $this->baseUrl;?>/images/design/contact.png" /></a></li>
+					<li style="margin: 0px 0px 0px 2px;"><img src="<?php echo $this->baseUrl;?>/images/design/menu_right.png" /></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="colLeft">
+<div style="margin: 10px 10px 12px 12px" class="box5 zaokraglenie_pelne"> <a href="http://www.dubli.com/9679943" title="nocheinbanner_728x90_pl">
+ <img src="http://www.dublinetwork.com/Banner/DubLi.com/pl/nocheinbanner_728x90_pl.jpg" width="580 px" alt="nocheinbanner_728x90_pl" border="0" />
+</a></div>
+		<div id="content" style="margin-top:1px;">
+			<div>
+				<img src="<?php echo $this->baseUrl;?>/images/design/baza_nian.png" />
+			</div>
+			<div class="box2 zaokraglenie_pelne">
+				<div class="box3 zaokraglenie_pelne">
+					<div class="box10 zaokraglenie_pelne">
+					<form action="<?php echo $this->baseUrl;?>/baza" method="post" name="baza" >
+						Miasto: <input name="miasto" class="bn_input zaokraglenie_pelne2" /> Dzielnica: <input name="dzielnica" class="bn_input zaokraglenie_pelne2" />
+						<a style="color: #ffffff;" onclick="document.getElementById('identyfikator2').style.display = !this.checked ? 'block' : 'none';">Zaawansowane </a>
+						<?php //<input style="background: url(/images/design/znajdz.png) no-repeat; width: 67px; height: 29px" type="submit" value=""/>
+						?>
+						<input style="background:none; color: #ffffff; font-family:Calibri; font-weight:bold;" type="submit" value="Pokaż"/>
+						<div id="identyfikator2" style="display: none">
+					<br/><br/><br/>
+					dfgffgdfd
+					</div>
+					</form>
+					</div>
+							<?php foreach($this->paginator as $record) {?>		
+					<div class="box11 zaokraglenie_pelne">
+						<img class="bn_zdjecie" src="<?php echo $this->baseUrl;?>/images/zd/anonim_male.png" />
+						<span class="czcionka_fiolet2"><b><?php echo $record['imie']." ".$record['nazwisko'];?></b></span><br />
+						<br />
+						<b>Miasto:</b> <?php echo $record['miasto'];?><br />
+						<b>Wiek:</b> <?php echo $record['wiek'];?> lat<br />
+						<br />
+						<b>Ocena:</b><br />
+						<a href="<?php echo $this->baseUrl;?>/profil/index/id/<?php echo $record['id'];?>"><input class="zobacz_profil" /></a>
+					</div>
+					<?php };
+			?>
+					<div class="paginacja">
+					<?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml'); ?>
+					<?php /*
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+						</ul>
+						*/?>
+					</div>
+				</div>
+			</div>
+		</div>
+<?php echo $this->render('footer.phtml'); ?>

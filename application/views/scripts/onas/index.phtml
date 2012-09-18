@@ -1,0 +1,20 @@
+﻿<?php echo $this->render('header.phtml'); ?>
+<div id="content">
+		<div id="colLeft">
+			<h1>O nas</h1>
+			
+		</div>
+		<div id="colRight">
+			<div id="text">
+				<h1>Fontinni w domimedia.pl</h1>
+				
+				<?php $tekst = str_replace('\\', '', $this->statyczne[1]->tresc); echo $tekst; ?>
+				<!-- 
+				Domimedia.pl jest firmą działającą od 1991 roku. <br/>Wielu Klientów identyfikuje się z nami, gdyż poznało jakość naszych usług. <br/>Nasza marka zyskała dobrą renomę, a Klienci polecają nas innym, dzięki czemu cały czas poszerzamy grono Naszych odbiorców.<br/>
+W Internecie obecni jesteśmy od 2005 roku jako jeden z większych sklepów internetowych armatury, elektroniki użytkowej i AGD.<br/>
+Od 2010 roku jesteśmy autoryzowanym dystrybutorem firmy FONTINI.
+ -->
+			</div>
+		</div>
+	</div>
+<?php echo $this->render('footer.phtml'); ?>

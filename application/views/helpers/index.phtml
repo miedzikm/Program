@@ -1,0 +1,37 @@
+﻿<?php echo $this->render('header.phtml'); ?>
+<div id="content01"></div>
+		<div id="content02">
+        <?php foreach($this->paginator as $record) {?>
+			<div id="motywator01"></div>
+			<div id="motywator02">
+				<h1><a href="<?php echo $this->baseUrl;?>/wybrany/index/tytul/<?php $adres = str_replace(' ', '_', $record['tytul']); echo $adres."&".$record['id'];?>"><?php $tekst = str_replace('\\', '', $record['tytul']); echo $tekst; ?></a></h1>
+				Dodany przez <a target="_blank" href="http://www.facebook.com/profile.php?id=<?php echo $record['ktoid'];?>"><?php $tekst = str_replace('\\', '', $record['kto']); echo $tekst; ?></a> w dniu <?php $tekst = str_replace('\\', '', $record['dzien']); echo $tekst; ?> r. o godzinie <?php $tekst = str_replace('\\', '', $record['godzina']); echo $tekst; ?>.
+				<a href="<?php echo $this->baseUrl;?>/wybrany/index/tytul/<?php $adres = str_replace(' ', '_', $record['tytul']); echo $adres."&".$record['id'];?>"><img alt="zmotywuj, motywujące cytaty, cytaty motywacyjne, motivation, motywator, motywatory, motywowanie" longdesc="zmotywuj, motywujące cytaty, cytaty motywacyjne, motivation, motywator, motywatory, motywowanie" title="<?php $tekst = str_replace('\\', '', $record['tagi']); echo $tekst; ?>" src="<?php $tekst = str_replace('\\', '', $record['zd']); echo $tekst; ?>" /></a>
+				<div id="opis">
+					<div id="opis01"></div>
+					<div id="opis02">
+						<b><?php $tyt = str_replace('\\', '', $record['tytul']); echo $tyt; ?></b><br />
+						<?php $tekst = str_replace('\\', '', $record['tresc']); echo $tekst; ?>
+					</div>
+					<div id="opis03"></div>
+				</div>
+				<div id="line"></div>
+				<div id="opcje">
+					<?php //<div style="float: left;"><b>Głosuj:</b> motywuje | demotywuje</div>?>
+                    <fb:like href="http://www.zmotywuj.net/wybrany/index/tytul/<?php $adres = str_replace(' ', '_', $this->escape($tyt)); echo $adres."&".$this->escape($record['id']);?>" send="false" width="450" show_faces="false" font=""></fb:like>
+                    
+					<div style="float: right;"><a href="<?php echo $this->baseUrl;?>/wybrany/index/tytul/<?php $adres = str_replace(' ', '_', $record['tytul']); echo $adres."&".$record['id'];?>">Dodaj swoją opinię (<fb:comments-count href=http://www.zmotywuj.net/wybrany/index/tytul/<?php echo $adres."&".$record['id'];?>></fb:comments-count>)</a></div><br /><br />
+				</div>	
+			</div>
+            
+			<div id="motywator03"></div>
+            <?php };
+			?>
+            <div id="paginacja">
+            <?= $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml'); ?>
+            </div>
+		</div>
+		<div id="content03"></div>
+        
+<?php echo $this->render('footer.phtml'); ?>
+   

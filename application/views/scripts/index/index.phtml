@@ -1,0 +1,34 @@
+﻿<?php echo $this->render('header.phtml'); ?>
+<div id="content">
+		<?php echo $this->render('lewa.phtml'); ?>
+		<div id="colRight">
+			<div id="text">
+				<link rel="stylesheet" href="http://mgroup.pl/library/nivo-slider/themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://mgroup.pl/library/nivo-slider/themes/pascal/pascal.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://mgroup.pl/library/nivo-slider/themes/orman/orman.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://mgroup.pl/library/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+				<div id="wrapper">
+        <div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+            <div id="slider" class="nivoSlider">
+                <img src="<?php echo $this->baseUrl;?>/images/slider/cover1.png" alt="" />
+                <img src="<?php echo $this->baseUrl;?>/images/slider/cover2.png" alt="" />
+                <img src="<?php echo $this->baseUrl;?>/images/slider/cover3.png" alt="" data-transition="slideInLeft" />
+                <img src="<?php echo $this->baseUrl;?>/images/slider/cover4.png" alt="" />
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="http://mgroup.pl/library/nivo-slider/demo/scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://mgroup.pl/library/nivo-slider/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+				
+			
+			</div>
+		</div>
+	</div>
+<?php echo $this->render('footer.phtml'); ?>

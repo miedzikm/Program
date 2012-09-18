@@ -1,0 +1,19 @@
+<div id="colLeft">
+<?php /*
+			<h1>Produkty</h1>
+			<ul>
+			<?php for($i=0;$i<count($this->produkty);$i++){
+			echo '<li><a href="'.$this->baseUrl.'/produkty/produkt/id/'.$this->produkty[$i]->id.'" title="'.$this->produkty[$i]->nazwa.'">'.$this->produkty[$i]->nazwa.'</a></li>';
+			}?>
+			</ul>
+			<div id="colLeft">
+			*/ ?>
+			<h1>Aktualności</h1>
+			<ul>
+			<?php for($i=count($this->aktualnosci)-1;$i>=0;$i--){
+				if($this->aktualnosci[$i]->widoczne == 1)
+			echo '<li><a href="'.$this->baseUrl.'/aktualnosci/news/id/'.$this->aktualnosci[$i]->id.'" title="'.$this->aktualnosci[$i]->tytul.'">'.$this->aktualnosci[$i]->tytul.'</a></li>';
+			}?>
+			</ul>
+		<?php // </div> ?>
+		</div>

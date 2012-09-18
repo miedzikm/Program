@@ -1,0 +1,39 @@
+<?php echo $this->render('header.phtml'); ?>
+<div id="content">
+	<div id="colLeft">
+		<h1>Kontakt</h1>
+<!--  
+		<span style="color: #C40524;">www:</span>
+		http://fontini.domimedia.com.pl <br /> <span style="color: #C40524;">e-mail:</span>
+		biuro@domimedia.pl <br /> <br /> <span style="color: #C40524;">Siedziba
+			firmy</span> <br /> Office Promotion <br /> ul. Wróblewskiego 19A <br />
+		90-001 Łódz <br /> tel. +48 42 682 31 02 <br />tel. kom. 604 77 95 95
+		<br />tel./fax +48 42 682 31 02 <br /> czynne od poniedziałku do
+		piątku <br />w godz.09:00-17:00<br />
+		-->
+		 <?php $tekst = str_replace('\\', '', $this->statyczne[3]->tresc); echo $tekst; ?>
+	</div>
+
+
+	<div id="colRight">
+		<div id="text">
+			<h1>Kontakt</h1>
+Twoja wiadomość została wysłana.
+
+
+
+		</div>
+	</div>
+
+
+
+	<!--  
+		<div id="colRight">
+			<div id="text">
+			<iframe width="600" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.pl/maps?f=q&amp;source=s_q&amp;hl=pl&amp;geocode=&amp;q=%C5%82%C3%B3d%C5%BA,+wr%C3%B3blewskiego+19A&amp;aq=&amp;sll=52.025459,19.204102&amp;sspn=6.897864,21.643066&amp;ie=UTF8&amp;hq=&amp;hnear=Genera%C5%82a+Walerego+Wr%C3%B3blewskiego+19A,+%C5%81%C3%B3d%C5%BA,+%C5%82%C3%B3dzkie&amp;t=m&amp;ll=51.746044,19.44932&amp;spn=0.00465,0.012875&amp;z=16&amp;output=embed"></iframe><br />
+		</div>
+		</div>
+		-->
+</div>
+<?php echo $this->render('footer.phtml'); ?>
+		

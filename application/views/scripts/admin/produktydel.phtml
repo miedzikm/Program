@@ -1,0 +1,64 @@
+﻿<?php echo $this->render('admin/mcms.phtml'); ?>
+		<div id="content">
+			<div class="content_buttons">
+				<ul>
+					<a href="<?php echo $this->baseUrl;?>/admin/produkty"><li><input class="content_buttons_new" value="Nowa publikacja" /></li></a>
+					<a href="<?php echo $this->baseUrl;?>/admin/produktylista"><li><input class="content_buttons_list" value="Lista publikacji" /></li></a>
+				<ul>
+			</div>
+			<div class="content_title">
+				produkty
+			</div>
+			<div class="content_info">
+				produkty / usuwanie pozycji
+			</div>
+			<div class="content_text">
+				<div class="content_options">
+					<div class="publikacje_select">
+						
+					</div>
+					<div class="publikacje_id">
+						
+					</div>
+					<div class="publikacje_title">
+						
+					</div>
+					<div class="publikacje_publish2">
+						
+					</div>
+					<div class="publikacje_date">
+						
+					</div>	
+					<div class="publikacje_options">
+					
+					</div>
+				</div>
+				 <?php 
+	if ($this->produkty) :
+   echo '<form action="'.$this->baseUrl.'/admin/produktydel" method="post">
+   <span>Czy na pewno usunąć:</span> '.$this->escape($this->produkty->nazwa).'
+      
+         <input type="hidden" name="id" value="'.$this->produkty->id.'" />
+         <input type="submit" name="del" value="Tak" />
+         <input type="submit" name="del" value="Nie" />
+      
+   </form>
+';
+else:
+   echo '<p>Nie można odnaleźć</p>';
+endif; 
+?>
+				<div class="content_line3">
+					<div class="publikacje_select">
+						
+					</div>
+					<div class="publikacje_zaznaczone">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

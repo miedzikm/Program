@@ -1,0 +1,11 @@
+﻿<?php echo $this->render('header.phtml'); ?>
+<div id="content">
+		<?php echo $this->render('lewa.phtml'); ?>
+		<div id="colRight">
+			<div id="text">
+				<h1>Projektanci</h1>
+				<?php $tekst = str_replace('\\', '', $this->statyczne[4]->tresc); echo $tekst; ?>
+			</div>
+		</div>
+	</div>
+<?php echo $this->render('footer.phtml'); ?>
